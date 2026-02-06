@@ -226,7 +226,6 @@ export default function Home() {
               <h4 className="font-medium text-sm text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors">
                 {video.title}
               </h4>
-              <p className="text-xs text-gray-400 mt-0.5">{video.views}</p>
             </a>
           ))}
         </div>
