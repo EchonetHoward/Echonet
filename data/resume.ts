@@ -1,9 +1,9 @@
 export const resumeData = {
   profile: {
-    name: "Leo",
+    name: "Howard",
     title: "Web3 & AI Explorer",
-    bio: "Hey, I'm Leo. A Web3 Native & AI Explorer. Building Echonet and writing for the Gen Z generation.",
-    location: "Yancheng, China",
+    bio: "04年，世界500强外企销售实习生，Echonet 主理人。致力于 00 后觉醒与成长，专注于「AI」「Web3」「个人成长」「出海」。",
+    location: "Yancheng China",
     connectLink: "/images/wechat-qr.jpg",
     avatar: "/images/avatar.jpg",
   },
