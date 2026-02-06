@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Echonet",
   description: "Web3 Native. AI Explorer. Writing for Gen Z.",
 };
 
