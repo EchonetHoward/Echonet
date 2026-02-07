@@ -73,7 +73,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, altText, caption }: Imag
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                delay={0.1}
+                transition={{ delay: 0.1 }}
                 className="mt-4 text-white/90 text-sm font-medium tracking-wide text-center max-w-2xl"
               >
                 {caption || altText}
