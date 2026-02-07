@@ -1,47 +1,34 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { resumeData } from "@/data/resume";
+import { getSortedPostsData } from "@/lib/posts";
+import { Navbar } from "@/components/navbar";
+import { ArrowLeft } from "lucide-react";
 
 export default function PostsPage() {
+  const posts = getSortedPostsData();
+
   return (
-    <div className="min-h-screen bg-white px-6 py-24 dark:bg-zinc-950 md:py-32">
-      <div className="mx-auto max-w-[700px]">
-        <Link
-          href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Home
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <div className="w-full max-w-3xl mx-auto px-6 pt-32 pb-24">
+        <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-black transition-colors mb-8">
+          <ArrowLeft size={20} />
+          <span>Back to Home</span>
         </Link>
         
-        <h1 className="mb-12 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-          All Posts
-        </h1>
-        
-        <div className="flex flex-col">
-          {resumeData.posts.map((post, idx) => (
-            <a
-              key={idx}
-              href={post.url}
-              className="group flex cursor-pointer items-baseline justify-between py-4 transition-opacity hover:opacity-100 border-b border-zinc-100 dark:border-zinc-900 last:border-0"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4">
-                <span className="w-32 text-sm font-mono text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
-                  {post.date}
-                </span>
-                <span className="font-medium text-lg text-zinc-900 dark:text-zinc-100 group-hover:underline">
+        <h1 className="text-3xl font-bold mb-12">All Posts</h1>
+        <div className="space-y-8">
+          {posts.map((post) => (
+            <Link key={post.id} href={`/posts/${post.id}`} className="block group">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
+                <span className="text-gray-500 text-sm font-mono min-w-[120px]">{post.date}</span>
+                <span className="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </span>
               </div>
-              <ArrowUpRight className="h-4 w-4 text-zinc-400 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </a>
+            </Link>
           ))}
-          
-          <div className="mt-12 text-center text-sm text-zinc-400">
-            More posts coming soon...
-          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

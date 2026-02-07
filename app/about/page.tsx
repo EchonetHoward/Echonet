@@ -15,7 +15,10 @@ export default function AboutPage() {
         
         <div className="prose prose-zinc dark:prose-invert">
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            My long story starts here...
+            Hey,欢迎来到我的秘密基地, 我是 Howard.
+            04年，ENFP，世界500强外企销售实习生（ing），Echonet 主理人（will do）。
+            篮球爱好者，健身小白，魔术爱好者，BBOXer，爱打英雄联盟 / 三角洲行动 / CS2。
+            致力于 00 后觉醒与成长，探索 「AI」「Web3」「两性成长」「出海」的可能性。
           </p>
         </div>
       </div>
